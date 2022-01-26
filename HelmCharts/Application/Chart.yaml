@@ -1,0 +1,5 @@
+apiVersion: v2
+name: dotnetapplication
+version: 1.0.0
+description: .NET Application Deployment
+type: application

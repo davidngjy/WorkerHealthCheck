@@ -1,0 +1,12 @@
+applicationName: postgres
+image:
+  repository: postgres
+  tag: 14
+replicas: 1
+containerPort: 5432
+service:
+  exposePort: 5432
+  containerPort: 5432
+env:
+  POSTGRES_PASSWORD: admin
+  POSTGRES_DB: admin

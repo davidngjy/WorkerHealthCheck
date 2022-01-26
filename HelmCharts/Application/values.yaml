@@ -1,0 +1,11 @@
+applicationName: workerhealthchecks
+image:
+  repository: workerhealthchecks
+  tag: latest
+replicas: 1
+containerPort: 5000
+env:
+  ConnectionStrings__DefaultConnection: Server=postgres-svc;Database=admin;User Id=postgres;Password=admin
+  HealthProbePort: 5000
+livenessPort: 5000
+readinessPort: 5000

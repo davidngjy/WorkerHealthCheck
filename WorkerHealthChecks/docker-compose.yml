@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  workerhealthchecks:
+    image: ${DOCKER_REGISTRY-}workerhealthchecks:latest
+    build:
+      context: .
+      dockerfile: WorkerHealthChecks/Dockerfile
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=healthcheck.database;Database=admin;User Id=postgres;Password=admin
+
+  healthcheck.database:
+    image: postgres:14
+    environment:
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=admin
+    ports:
+      - "5432"
